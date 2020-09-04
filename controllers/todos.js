@@ -17,12 +17,12 @@ function index(req, res) {
 }
 
 function create(req, res) {
+    console.log("Before CREATE! REQ BODY: ",req.body)
     req.body.done = 'Not Done';
     req.body.todoID = IDcounter;
-    console.log(req.body.todoID);
     IDcounter++;
     Todo.addToDo(req.body); //form data is always in req.body
-    console.log(req.body);
+    console.log("After CREATE! REQ BODY: ",req.body)
     res.redirect('/todos');
 }
 
@@ -31,7 +31,7 @@ function create(req, res) {
  }
 
  function deleteTodo(req, res) { 
-    Todo.removeToDo(req.body.todoID);
-    console.log("todoID",req.body.todoID);
+    console.log("REQ BODY: ",req.body)
+    Todo.removeToDo(req.body);
     res.redirect('/todos');
   }

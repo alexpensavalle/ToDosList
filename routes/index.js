@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 router.get('/todos', todoController.index);
 router.post('/todos', todoController.create);
 //router.put('/todos', todoController.create);
-router.delete('/todos', todoController.delete);
+router.delete('/todos/:id', todoController.delete);
 
 
 
