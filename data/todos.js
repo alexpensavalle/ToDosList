@@ -17,7 +17,7 @@ function addToDo(todo) {
 }
 
 function removeToDo(todoID) {
-    let index = todos.indexOf(todoID);
+    let index = todos.indexOf(todos.todoID);
     console.log("Index: ", index);
     todos.splice(index, 1);
 }
