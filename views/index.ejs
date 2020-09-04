@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Images</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>My Images</h1>
+    <% if(images.length) { %>
+      <div class="container">
+      <% images.forEach(image => { %>
+        <div class='card'>
+          <img src="<%= image.src %>" class="item-card">
+        </div>
+      <% }) %>
+    </div>
+    <% } else { %>
+      <h1>You don't have any images yet!</h1>
+    <%}%>
+
+    <hr>
+    <form action="/images" method="POST">
+      <label for="src">Enter an Image URL:</label>
+      <input type="text" id="src" name="src">
+      <input type="submit" value="ADD IMAGE">
+    </form>
+  </body>
+</html>
