@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Images</title>
+    <title>Unit 2 Assessment (Alex Pensavalle)</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>My Images</h1>
-    <% if(images.length) { %>
+    <h1>ToDo List</h1>
+    <% if(todos.length) { %>
       <div class="container">
-      <% images.forEach(image => { %>
+      <% todos.forEach(todo => { %>
         <div class='card'>
           <img src="<%= image.src %>" class="item-card">
         </div>
       <% }) %>
     </div>
     <% } else { %>
-      <h1>You don't have any images yet!</h1>
+      <h1>You don't have any todos yet!</h1>
     <%}%>
 
     <hr>
     <form action="/images" method="POST">
-      <label for="src">Enter an Image URL:</label>
+      <label for="src">Enter a ToDo:</label>
       <input type="text" id="src" name="src">
       <input type="submit" value="ADD IMAGE">
     </form>

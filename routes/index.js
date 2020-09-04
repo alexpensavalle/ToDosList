@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-const imageController = require('../controllers/images')
+const todoController = require('../controllers/todos')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.redirect('/images');
+  res.redirect('/todos');
 });
 
-router.get('/images', imageController.index);
-router.post('/images', imageController.create);
+router.get('/todos', todoController.index);
+router.post('/todos', todoController.create);
 
 module.exports = router;
